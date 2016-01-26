@@ -4,6 +4,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@ page isErrorPage="true" %>
+<%@ page import="com.mindscapehq.raygun4java.webprovider.RaygunServletClient" %>
+
+<%
+RaygunServletClient client = new RaygunServletClient("API_KEY_KERE", request);
+client.Send(exception);
+%>
+
 <html lang="en">
 <jsp:include page="fragments/staticFiles.jsp"/>
 
